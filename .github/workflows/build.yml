@@ -5,7 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: unzip lootbeams-mod.zip
+      - run: |
+          ls
+          for f in *.zip; do unzip -o "$f"; done
+          ls
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
